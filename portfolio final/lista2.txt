@@ -1,0 +1,590 @@
+Lista 2
+
+1)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Diferença</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calculadora de Diferença</h2>
+    <input type="number" id="num1" placeholder="Digite o primeiro número">
+    <input type="number" id="num2" placeholder="Digite o segundo número">
+    <button onclick="calcularDiferenca()">Calcular Diferença</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        function calcularDiferenca() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            
+            if (!isNaN(num1) && !isNaN(num2)) {
+                let diferenca = Math.abs(num1 - num2);
+                document.getElementById('resultado').innerText = "Diferença: " + diferenca;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira números válidos.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+2)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Paridade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Verificação de Paridade</h2>
+    <input type="number" id="numPar" placeholder="Digite um número">
+    <button onclick="verificarPar()">Verificar se é Par</button>
+    <h3 id="paridade"></h3>
+
+    <script>
+        function verificarPar() {
+            let num = parseInt(document.getElementById('numPar').value);
+            
+            if (!isNaN(num)) {
+                let mensagem = (num % 2 === 0) ? "O número é par." : "O número é ímpar.";
+                document.getElementById('paridade').innerText = mensagem;
+            } else {
+                document.getElementById('paridade').innerText = "Por favor, insira um número válido.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+3)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Múltiplo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Verificação de Múltiplo</h2>
+    <input type="number" id="num1" placeholder="Digite o primeiro número">
+    <input type="number" id="num2" placeholder="Digite o segundo número">
+    <button onclick="verificarMultiplo()">Verificar</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        function verificarMultiplo() {
+            let num1 = parseInt(document.getElementById('num1').value);
+            let num2 = parseInt(document.getElementById('num2').value);
+            
+            if (!isNaN(num1) && !isNaN(num2) && num2 !== 0) {
+                let mensagem = (num1 % num2 === 0) ? `${num1} é múltiplo de ${num2}.` : `${num1} não é múltiplo de ${num2}.`;
+                document.getElementById('resultado').innerText = mensagem;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira números válidos e diferentes de zero.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+4)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Temperatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Conversão de Temperatura</h2>
+    <input type="number" id="celsius" placeholder="Digite a temperatura em Celsius">
+    <button onclick="converterTemperatura()">Converter para Fahrenheit</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        function converterTemperatura() {
+            let celsius = parseFloat(document.getElementById('celsius').value);
+            
+            if (!isNaN(celsius)) {
+                let fahrenheit = (celsius * 9/5) + 32;
+                document.getElementById('resultado').innerText = celsius + "ºC é igual a " + fahrenheit + "ºF.";
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira um valor válido.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+5)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Área</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cálculo da Área</h2>
+    <input type="number" id="base" placeholder="Digite a base">
+    <input type="number" id="altura" placeholder="Digite a altura">
+    <button onclick="calcularArea()">Calcular Área</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        function calcularArea() {
+            let base = parseFloat(document.getElementById('base').value);
+            let altura = parseFloat(document.getElementById('altura').value);
+            
+            if (!isNaN(base) && !isNaN(altura)) {
+                let area = base * altura;
+                document.getElementById('resultado').innerText = "Área: " + area;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira valores válidos.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+6)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Verificação de Notas</h2>
+    <input type="number" id="nota1" placeholder="Digite a primeira nota">
+    <input type="number" id="nota2" placeholder="Digite a segunda nota">
+    <button onclick="verificarNotas()">Verificar</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        function verificarNotas() {
+            let nota1 = parseFloat(document.getElementById('nota1').value);
+            let nota2 = parseFloat(document.getElementById('nota2').value);
+            
+            if (!isNaN(nota1) && !isNaN(nota2)) {
+                let media = (nota1 + nota2) / 2;
+                let acimaMedia = media >= 7 ? "Acima da média." : "Abaixo da média.";
+                
+                let parNota1 = (nota1 % 2 === 0) ? "A primeira nota é par." : "A primeira nota é ímpar.";
+                let parNota2 = (nota2 % 2 === 0) ? "A segunda nota é par." : "A segunda nota é ímpar.";
+                
+                document.getElementById('resultado').innerText = 
+                    `Média: ${media}\n${acimaMedia}\n${parNota1}\n${parNota2}`;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira notas válidas.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+7)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calculadora de IMC</h2>
+    <input type="number" id="peso" placeholder="Digite seu peso (kg)" step="0.1">
+    <input type="number" id="altura" placeholder="Digite sua altura (m)" step="0.01">
+    <button onclick="calcularIMC()">Calcular IMC</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        function calcularIMC() {
+            let peso = parseFloat(document.getElementById('peso').value);
+            let altura = parseFloat(document.getElementById('altura').value);
+            
+            if (!isNaN(peso) && !isNaN(altura) && altura > 0) {
+                let imc = peso / (altura * altura);
+                document.getElementById('resultado').innerText = `Seu IMC é: ${imc.toFixed(2)}`;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira valores válidos para peso e altura.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+8)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Ano Bissexto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Verificação de Ano Bissexto</h2>
+    <input type="number" id="ano" placeholder="Digite o ano">
+    <button onclick="verificarBissexto()">Verificar</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        function verificarBissexto() {
+            let ano = parseInt(document.getElementById('ano').value);
+
+            if (!isNaN(ano)) {
+                let bissexto = (ano % 4 === 0 && (ano % 100 !== 0 || ano % 400 === 0));
+                let mensagem = bissexto ? `${ano} é um ano bissexto.` : `${ano} não é um ano bissexto.`;
+                document.getElementById('resultado').innerText = mensagem;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira um ano válido.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+9)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Moeda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Conversão de Moeda</h2>
+    <input type="number" id="taxa" placeholder="Digite a taxa de câmbio">
+    <input type="number" id="valor" placeholder="Digite o valor desejado">
+    <button onclick="converterMoeda()">Converter</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        function converterMoeda() {
+            let taxa = parseFloat(document.getElementById('taxa').value);
+            let valor = parseFloat(document.getElementById('valor').value);
+            
+            if (!isNaN(taxa) && !isNaN(valor) && taxa > 0) {
+                let valorConvertido = valor * taxa;
+                document.getElementById('resultado').innerText = `O valor convertido é: ${valorConvertido.toFixed(2)}`;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira valores válidos para a taxa de câmbio e o valor desejado.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+10)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        pre {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tabuada</h2>
+    <input type="number" id="numero" placeholder="Digite um número de 1 a 9" min="1" max="9">
+    <button onclick="gerarTabuada()">Gerar Tabuada</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        function gerarTabuada() {
+            let numero = parseInt(document.getElementById('numero').value);
+            
+            if (!isNaN(numero) && numero >= 1 && numero <= 9) {
+                let tabuada = '';
+                for (let i = 1; i <= 10; i++) {
+                    tabuada += `${numero} x ${i} = ${numero * i}\n`;
+                }
+                document.getElementById('resultado').innerText = tabuada;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira um número válido de 1 a 9.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+11)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra, Papel e Tesoura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        h3 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Jogo Pedra, Papel e Tesoura</h2>
+    <button onclick="jogar('pedra')">Pedra</button>
+    <button onclick="jogar('papel')">Papel</button>
+    <button onclick="jogar('tesoura')">Tesoura</button>
+    <h3 id="resultado"></h3>
+    <h4 id="mensagem"></h4>
+
+    <script>
+        function jogar(escolhaUsuario) {
+            // Opções do computador
+            const opcoes = ['pedra', 'papel', 'tesoura'];
+            const escolhaComputador = opcoes[Math.floor(Math.random() * 3)];
+
+            // Determina o vencedor
+            let resultado = '';
+
+            if (escolhaUsuario === escolhaComputador) {
+                resultado = 'Empate!';
+            } else if (
+                (escolhaUsuario === 'pedra' && escolhaComputador === 'tesoura') ||
+                (escolhaUsuario === 'papel' && escolhaComputador === 'pedra') ||
+                (escolhaUsuario === 'tesoura' && escolhaComputador === 'papel')
+            ) {
+                resultado = 'Você ganhou!';
+            } else {
+                resultado = 'Você perdeu!';
+            }
+
+            // Exibe o resultado
+            document.getElementById('resultado').innerText = `Você escolheu: ${escolhaUsuario}\nComputador escolheu: ${escolhaComputador}`;
+            document.getElementById('mensagem').innerText = resultado;
+        }
+    </script>
+</body>
+</html>
+
+
+12)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Fatorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calculadora de Fatorial</h2>
+    <input type="number" id="numero" placeholder="Digite um número" min="0">
+    <button onclick="calcularFatorial()">Calcular Fatorial</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        function calcularFatorial() {
+            let numero = parseInt(document.getElementById('numero').value);
+            
+            if (!isNaN(numero) && numero >= 0) {
+                let fatorial = 1;
+                for (let i = 1; i <= numero; i++) {
+                    fatorial *= i;
+                }
+                document.getElementById('resultado').innerText = `O fatorial de ${numero} é: ${fatorial}`;
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira um número válido.";
+            }
+        }
+    </script>
+</body>
+</html>

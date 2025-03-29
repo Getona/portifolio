@@ -1,0 +1,572 @@
+Lista 3
+
+1)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora com Arrow Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        h3 {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calculadora com Arrow Functions</h2>
+    <input type="number" id="num1" placeholder="Digite o primeiro número">
+    <input type="number" id="num2" placeholder="Digite o segundo número">
+    <br>
+    <button onclick="calcular('+')">Somar</button>
+    <button onclick="calcular('-')">Subtrair</button>
+    <button onclick="calcular('*')">Multiplicar</button>
+    <button onclick="calcular('/')">Dividir</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        // Arrow functions para as operações matemáticas
+        const somar = (a, b) => a + b;
+        const subtrair = (a, b) => a - b;
+        const multiplicar = (a, b) => a * b;
+        const dividir = (a, b) => b !== 0 ? a / b : "Erro: Divisão por zero!";
+
+        // Função para selecionar a operação e calcular o resultado
+        function calcular(operacao) {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let resultado;
+
+            switch (operacao) {
+                case '+':
+                    resultado = somar(num1, num2);
+                    break;
+                case '-':
+                    resultado = subtrair(num1, num2);
+                    break;
+                case '*':
+                    resultado = multiplicar(num1, num2);
+                    break;
+                case '/':
+                    resultado = dividir(num1, num2);
+                    break;
+                default:
+                    resultado = "Operação inválida";
+            }
+
+            document.getElementById('resultado').innerText = `Resultado: ${resultado}`;
+        }
+    </script>
+</body>
+</html>
+
+
+2)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inversor de String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Inversor de String</h2>
+    <input type="text" id="texto" placeholder="Digite um texto">
+    <button onclick="inverterTexto()">Inverter</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        const inverterTexto = () => {
+            let texto = document.getElementById('texto').value;
+            let textoInvertido = texto.split('').reverse().join('');
+            document.getElementById('resultado').innerText = `Texto invertido: ${textoInvertido}`;
+        }
+    </script>
+</body>
+</html>
+
+
+3)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separador de Letras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #resultado {
+            white-space: pre-line;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Separador de Letras</h2>
+    <input type="text" id="nome" placeholder="Digite um nome">
+    <button onclick="separarLetras()">Separar</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        const separarLetras = () => {
+            let nome = document.getElementById('nome').value;
+            let letrasSeparadas = nome.split('').join('\n'); // Divide e adiciona quebra de linha
+            document.getElementById('resultado').innerText = letrasSeparadas;
+        }
+    </script>
+</body>
+</html>
+
+
+4)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Carteira de Motorista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Verificação de Carteira de Motorista</h2>
+    <input type="number" id="idade" placeholder="Digite sua idade">
+    <button onclick="verificarIdade()">Verificar</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        const verificarIdade = () => {
+            let idade = parseInt(document.getElementById('idade').value);
+            let mensagem = idade >= 18 ? "Você pode tirar a carteira de motorista!" : "Você ainda não pode tirar a carteira de motorista.";
+            document.getElementById('resultado').innerText = mensagem;
+        }
+    </script>
+</body>
+</html>
+
+5)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenação de Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+            width: 50px;
+            text-align: center;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ordenação de Números</h2>
+    <input type="number" id="num1" placeholder="N1">
+    <input type="number" id="num2" placeholder="N2">
+    <input type="number" id="num3" placeholder="N3">
+    <button onclick="ordenarNumeros()">Ordenar</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        const ordenarNumeros = () => {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let num3 = parseFloat(document.getElementById('num3').value);
+
+            let numeros = [num1, num2, num3];
+            numeros.sort((a, b) => a - b); // Ordena os números em ordem crescente
+
+            document.getElementById('resultado').innerText = `Ordem crescente: ${numeros.join(', ')}`;
+        }
+    </script>
+</body>
+</html>
+
+6)
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Horas para Minutos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+            width: 80px;
+            text-align: center;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Conversor de Horas para Minutos</h2>
+    <input type="number" id="horas" placeholder="Horas">
+    <button onclick="converter()">Converter</button>
+    <h3 id="resultado"></h3>
+
+    <script>
+        const converter = () => {
+            let horas = parseFloat(document.getElementById('horas').value);
+            let minutos = horas * 60;
+            document.getElementById('resultado').innerText = `${horas} horas equivalem a ${minutos} minutos.`;
+        }
+    </script>
+</body>
+</html>
+
+7)
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Cédulas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Calculadora de Cédulas</h2>
+    <input type="number" id="valor" placeholder="Digite um valor em R$">
+    <button onclick="calcularCedulas()">Calcular</button>
+    
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        const calcularCedulas = () => {
+            let valor = parseInt(document.getElementById("valor").value);
+            let cedulas = [200, 100, 50, 20, 10, 5, 1];
+            let resultado = "";
+
+            if (isNaN(valor) || valor <= 0) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira um valor válido!";
+                return;
+            }
+
+            cedulas.forEach(cedula => {
+                let qtd = Math.floor(valor / cedula);
+                if (qtd > 0) {
+                    resultado += `R$ ${cedula}: ${qtd} cédula(s) <br>`;
+                    valor %= cedula;
+                }
+            });
+
+            document.getElementById("resultado").innerHTML = resultado;
+        };
+    </script>
+
+</body>
+</html>
+
+8)
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Raiz Quadrada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Calculadora de Raiz Quadrada</h2>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="calcularRaiz()">Calcular</button>
+    
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        function calcularRaiz() {
+            let num = parseFloat(document.getElementById("numero").value);
+
+            if (isNaN(num) || num < 0) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira um número válido!";
+                return;
+            }
+
+            let raiz = Math.sqrt(num).toFixed(2);
+            document.getElementById("resultado").innerHTML = `A raiz quadrada de ${num} é ${raiz}`;
+        }
+    </script>
+
+</body>
+</html>
+
+9)
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .sexo {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Cadastro</h2>
+
+    <form id="cadastroForm">
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="text" id="endereco" placeholder="Endereço">
+        
+        <div class="sexo">
+            <label><input type="radio" name="sexo" value="Masculino"> Masculino</label>
+            <label><input type="radio" name="sexo" value="Feminino"> Feminino</label>
+        </div>
+        
+        <input type="tel" id="telefone" placeholder="Telefone">
+        <input type="tel" id="celular" placeholder="Celular">
+        <input type="email" id="email" placeholder="E-mail">
+
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            let nome = document.getElementById("nome").value;
+            let endereco = document.getElementById("endereco").value;
+            let telefone = document.getElementById("telefone").value;
+            let celular = document.getElementById("celular").value;
+            let email = document.getElementById("email").value;
+            let sexo = document.querySelector('input[name="sexo"]:checked');
+
+            if (!nome) {
+                alert("Preencha o campo Nome!");
+                return;
+            }
+            if (!endereco) {
+                alert("Preencha o campo Endereço!");
+                return;
+            }
+            if (!sexo) {
+                alert("Selecione o Sexo!");
+                return;
+            }
+            if (!telefone) {
+                alert("Preencha o campo Telefone!");
+                return;
+            }
+            if (!celular) {
+                alert("Preencha o campo Celular!");
+                return;
+            }
+            if (!email) {
+                alert("Preencha o campo E-mail!");
+                return;
+            }
+
+            alert("Cadastro realizado com sucesso!");
+        }
+    </script>
+
+</body>
+</html>
+
+10)
+
+const calcularImpostoRenda = (salario) => {
+    if (salario <= 1903.98) {
+        return `Isento de Imposto de Renda.`;
+    } else if (salario <= 2826.65) {
+        return `Imposto: R$ ${(salario * 0.075 - 142.80).toFixed(2)}`;
+    } else if (salario <= 3751.05) {
+        return `Imposto: R$ ${(salario * 0.15 - 354.80).toFixed(2)}`;
+    } else if (salario <= 4664.68) {
+        return `Imposto: R$ ${(salario * 0.225 - 636.13).toFixed(2)}`;
+    } else {
+        return `Imposto: R$ ${(salario * 0.275 - 869.36).toFixed(2)}`;
+    }
+};
+
+// Exemplo de uso:
+let salario = 3000; // Altere o valor para testar
+console.log(calcularImpostoRenda(salario));
+
+11)
+
+const calcularINSS = (salario) => {
+    let desconto;
+
+    if (salario <= 1412.00) {
+        desconto = salario * 0.075;
+    } else if (salario <= 2666.68) {
+        desconto = (1412.00 * 0.075) + ((salario - 1412.00) * 0.09);
+    } else if (salario <= 4000.03) {
+        desconto = (1412.00 * 0.075) + ((2666.68 - 1412.00) * 0.09) + ((salario - 2666.68) * 0.12);
+    } else if (salario <= 7786.02) {
+        desconto = (1412.00 * 0.075) + ((2666.68 - 1412.00) * 0.09) + ((4000.03 - 2666.68) * 0.12) + ((salario - 4000.03) * 0.14);
+    } else {
+        desconto = 908.86; // Teto máximo do INSS em 2024
+    }
+
+    return `Desconto do INSS: R$ ${desconto.toFixed(2)}`;
+};
+
+// Exemplo de uso:
+let salario = 5000; // Altere o valor para testar
+console.log(calcularINSS(salario));
+
+12)
+
+const calcularJurosCompostos = (capital, taxa, tempo) => {
+    let montante = capital * Math.pow((1 + taxa), tempo);
+    return `Montante final: R$ ${montante.toFixed(2)}`;
+};
+
+// Exemplo de uso:
+let capital = 1000; // Capital inicial R$
+let taxa = 0.05;    // Taxa de 5% (0.05 em decimal)
+let tempo = 12;     // Tempo em meses
+
+console.log(calcularJurosCompostos(capital, taxa, tempo));
+
+13)
+
+const calcularParcelaFinanciamento = (valor, taxa, parcelas) => {
+    let i = taxa; // Taxa de juros decimal (ex: 5% = 0.05)
+    let pmt = (valor * i) / (1 - Math.pow(1 + i, -parcelas));
+    return `Valor da parcela: R$ ${pmt.toFixed(2)}`;
+};
+
+// Exemplo de uso:
+let valorFinanciado = 50000; // Valor total do financiamento
+let taxaJuros = 0.02;        // Taxa de 2% ao mês (0.02)
+let numParcelas = 36;        // Número de parcelas
+
+console.log(calcularParcelaFinanciamento(valorFinanciado, taxaJuros, numParcelas));
